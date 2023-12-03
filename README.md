@@ -14,6 +14,6 @@ Boiler plate code for tokenizing an audio recording/song.
 
 ## Most artists, even famous ones are now reliant on live performance or other forms of monetixation for income, due to the fact that the streaming business model is far less lucrative for artist and shareholders than physical media.
 
-## With Web3, there is a better way...
+## With Blockchain, Web3 and the Semantic Web, there is a better way...
 
 ***
