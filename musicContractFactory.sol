@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 // Import the SongToken contract
-import "./SongToken.sol";
+import "./ownableSong.sol";
 
 contract SongTokenFactory is Ownable {
     // Event emitted when a new SongToken contract is created
