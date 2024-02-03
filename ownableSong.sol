@@ -3,11 +3,8 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 contract SongToken is ERC1155, Ownable {
-    using SafeMath for uint256;
-
     uint256 public constant TOTAL_SHARES = 10000; // Total shares for each song
 
     // Mapping to track the shares owned by each address for a specific song
@@ -32,7 +29,7 @@ contract SongToken is ERC1155, Ownable {
 
         // Mint shares to the specified account
         _mint(account, songId, amount, "");
-        _shares[songId][account] = _shares[songId][account].add(amount);
+        _shares[songId][account] += amount;  // Using the += operator for addition
 
         // Emit an event for the purchased shares
         emit SharesPurchased(account, songId, amount);
@@ -48,7 +45,7 @@ contract SongToken is ERC1155, Ownable {
         _burn(msg.sender, songId, amount);
 
         // Update the shares mapping
-        _shares[songId][msg.sender] = _shares[songId][msg.sender].sub(amount);
+        _shares[songId][msg.sender] -= amount;  // Using the -= operator for subtraction
 
         // Emit an event for the sold shares
         emit SharesSold(msg.sender, songId, amount);
